@@ -6,7 +6,6 @@ public class CannonController : MonoBehaviour {
     [Header("General options: ")]
     public Transform target;
     
-    
     [Space(3)]
     
     [Header("Smoothing options: ")] [Tooltip("Enables rotational smoothing with linear interpolation.")]

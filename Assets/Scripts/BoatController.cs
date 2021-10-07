@@ -29,7 +29,10 @@ public class BoatController : MonoBehaviour {
 
 		if (distance < radius)
 		{
-			interactImage.SetActive(true);
+            if (!isMounted)
+			{
+				interactImage.SetActive(true);
+			}
 
 			// If the "E" key is pressed
 			if (Input.GetKeyDown(KeyCode.E) && !isMounted)

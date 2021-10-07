@@ -10,13 +10,14 @@ public class BoatController : MonoBehaviour {
 
 	public GameObject wheel;
 	public GameObject player;
+	public GameObject interactImage;
 	public Camera playerCamera;
 	public Vector3 cameraStartPosition;
 
 	bool isMounted;
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
 	{
 
 		// Distance between the player and steering wheel
@@ -25,12 +26,15 @@ public class BoatController : MonoBehaviour {
 		// Radius of the steering wheel
 		float radius = wheel.GetComponent<Interactable>().radius;
 		Debug.Log(distance);
+
 		if (distance < radius)
 		{
+			interactImage.SetActive(true);
 
 			// If the "E" key is pressed
 			if (Input.GetKeyDown(KeyCode.E) && !isMounted)
 			{
+				interactImage.SetActive(false);
 				// Disables character movement
 				player.GetComponent<PlayerController>().canMovePlayer = false;
 				Debug.Log("Got ON the steering wheel");
@@ -45,7 +49,12 @@ public class BoatController : MonoBehaviour {
 				Debug.Log("Got OFF the steering wheel");
 				isMounted = false;
 			}
+        }
+        else
+        {
+			interactImage.SetActive(false);
 		}
+
 
 		// When mounted, the boat controls are enabled.
 		if (isMounted)
@@ -55,7 +64,7 @@ public class BoatController : MonoBehaviour {
 		}
 	}
 
-	void Movement()
+    void Movement()
 	{
 		float verticalInput = 0.0f;
 

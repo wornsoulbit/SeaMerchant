@@ -21,7 +21,7 @@ public class CannonController : MonoBehaviour {
     public bool disableRotationalConstraint = false;
     
     private void OnTriggerStay(Collider other) {
-        if (other.gameObject.CompareTag("Player") && !disableTargetting) {
+        if (other.gameObject.CompareTag("Player") && !disableTargetting && !disableRotationalConstraint) {
             Vector3 direction = target.position - transform.position;
             Quaternion rotation = Quaternion.LookRotation(direction);
             rotation = Quaternion.Euler(transform.eulerAngles.x, rotation.eulerAngles.y, transform.eulerAngles.z);

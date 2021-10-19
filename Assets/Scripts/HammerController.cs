@@ -20,7 +20,7 @@ public class HammerController : MonoBehaviour {
         {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
             if (Input.GetMouseButtonDown(0)) { //If left mouse button is pressed
-                Debug.Log("Object hit: " + hitInfo.collider.gameObject.name);
+                //Debug.Log("Object hit: " + hitInfo.collider.gameObject.name);
                 if (hitInfo.collider.gameObject.CompareTag("Tree")) {
                     //Change tree into chopped tree trunk.
                     //Add wood to player's resources.

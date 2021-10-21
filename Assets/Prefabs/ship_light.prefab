@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 647812110673906129}
   - component: {fileID: 647812110675037073}
   - component: {fileID: 647812110400111008}
+  - component: {fileID: 2525859267665684648}
   - component: {fileID: 8619017338127621553}
   m_Layer: 7
   m_Name: ship_light
@@ -315,6 +316,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 22dd0366bbdabec4aa2d0758c455c6fd, type: 3}
+--- !u!114 &2525859267665684648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647812110672844241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f541da6a9d27d4445a704ef0df7d3268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  isDead: 0
+  healthBar: {fileID: 0}
 --- !u!114 &8619017338127621553
 MonoBehaviour:
   m_ObjectHideFlags: 0

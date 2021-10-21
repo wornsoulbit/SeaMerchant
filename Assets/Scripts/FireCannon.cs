@@ -34,6 +34,7 @@ public class FireCannon : MonoBehaviour {
 
     private void Fire() {
         GameObject cannonBall = Instantiate(cannonBallPrefab, cannonOutputNozzle.transform.position, cannonBallPrefab.transform.rotation);
+
         cannonBall.transform.SetParent(cannonProjectiles.transform, false); //Stores the cannonball gameobject without changing its transform.
         Rigidbody cannonBallRigidbody = cannonBall.GetComponent<Rigidbody>();
 

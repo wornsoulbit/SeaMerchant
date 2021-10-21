@@ -6,7 +6,7 @@ public class HammerController : MonoBehaviour {
     public Camera camera;
     public float rayDistance = 3f;
 
-    public int dmg = -15;
+    public int dmg = 15;
 
     void Update() {
         HitObject();
@@ -31,7 +31,8 @@ public class HammerController : MonoBehaviour {
                 }
                 if (hitInfo.collider.gameObject.CompareTag("Pirate")) {
                     //Reduce pirate HP. (Pirates require 2 hits to eliminate)
-                    hitInfo.collider.gameObject.GetComponent<HealthController>().updateHealth(dmg);
+                    //NOTE: Change to pirate later on
+                    hitInfo.collider.gameObject.GetComponent<BoatHealthController>().TakeDamage(dmg);
                 }
                 return hitInfo.collider.gameObject;
             }

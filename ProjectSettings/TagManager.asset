@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - MAST_Holder
+  - CannonBall
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Player
   - 
   - 
   - 

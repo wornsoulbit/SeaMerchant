@@ -11,7 +11,6 @@ public class BoatController : MonoBehaviour {
 	public GameObject wheel;
 	public GameObject player;
 	public GameObject interactImage;
-	public Camera playerCamera;
 	public Vector3 cameraStartPosition;
 
 

@@ -7,6 +7,9 @@ TagManager:
   - MAST_Holder
   - CannonBall
   - Water
+  - Pirate
+  - Boat
+  - Tree
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class BoatController : MonoBehaviour {
 
 		// Radius of the steering wheel
 		float radius = wheel.GetComponent<Interactable>().radius;
-		Debug.Log(distance);
+		// Debug.Log(distance);
 
 		if (distance < radius)
 		{

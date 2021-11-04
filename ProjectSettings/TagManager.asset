@@ -10,6 +10,7 @@ TagManager:
   - Pirate
   - Boat
   - Tree
+  - Hammer
   layers:
   - Default
   - TransparentFX

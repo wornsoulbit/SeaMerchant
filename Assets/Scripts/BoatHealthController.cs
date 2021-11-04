@@ -1,29 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoatHealthController : MonoBehaviour
 {
-	public int maxHealth = 100;
-	public int currentHealth;
-	public bool isDead = false;
+	private int maxHealth = 100;
+	private int currentHealth = 80;
+	private bool isDead = false;
+	//public GameObject healthBar;
 
 	public HealthBar healthBar;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		currentHealth = maxHealth;
-		healthBar.SetMaxHealth(maxHealth);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-/*		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			TakeDamage(20);
-		}*/
+		/*		if (Input.GetKeyDown(KeyCode.Space))
+				{
+					TakeDamage(20);
+				}*/
+
 	}
 
 	public void TakeDamage(int damage)
@@ -33,8 +34,23 @@ public class BoatHealthController : MonoBehaviour
         {
 			isDead = true;
         }
-		healthBar.SetHealth(currentHealth);
+		healthBar.GetComponent<Slider>().value = (float)currentHealth;
+
 	}
 
+	public bool Repair()
+    {
+		if(currentHealth < maxHealth)
+        {
+			currentHealth += 5;
+			healthBar.GetComponent<Slider>().value = (float)currentHealth;
+			return true;
+		}
+		else
+        {
+			return false;
+        }
+
+	}
 
 }

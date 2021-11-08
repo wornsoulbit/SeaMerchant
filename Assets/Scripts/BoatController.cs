@@ -15,7 +15,7 @@ public class BoatController : MonoBehaviour {
 
 
 
-	bool isMounted;
+	public bool isMounted;
 
     // Update is called once per frame
     void Update()

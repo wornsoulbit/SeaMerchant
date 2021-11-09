@@ -9,6 +9,7 @@ public class HammerController : MonoBehaviour {
     private int supply;
     private int maxSupply;
     public GameObject supplyText;
+    BoatHealthController boatHealth;
 
     public int dmg = 15;
 
@@ -16,6 +17,7 @@ public class HammerController : MonoBehaviour {
     {
         supply = 20;
         maxSupply = 60;
+        boatHealth = GameObject.FindGameObjectWithTag("Boat").GetComponent<BoatHealthController>();
     }
 
     void Update() {
@@ -40,17 +42,29 @@ public class HammerController : MonoBehaviour {
                     //Debug.Log("hitting something");
 
                 }
-                if (hitInfo.collider.gameObject.CompareTag("Boat")) {
+
+                /*if (hitInfo.collider.gameObject.CompareTag("Boat")) {
                     //Remove wood from player's resources.
                     //Increase boat health.
                     //Debug.Log("hitting something");
-                    bool successful = hitInfo.collider.gameObject.GetComponent<BoatHealthController>().Repair();
+                    *//*int boatSectionHitCount = hitInfo.collider.gameObject.GetComponent<CollisionDetection>().Repair();
 
-                    if(successful)
+                    if (boatSectionHitCount > 0 && supply >= 5)
                     {
+                        if (boatSectionHitCount < 0)
+                            hitInfo.collider.gameObject.GetComponent<CollisionDetection>().hitCount = 0;
+                        hitInfo.collider.gameObject.GetComponent<BoatHealthController>().Repair();
                         useSupplyForRepair();
-                    }
-                }
+                    }*//*
+
+                }*/
+
+
+                if (hitInfo.collider.gameObject.CompareTag("BoatColliders"))
+                    Repair(hitInfo.collider.gameObject.GetComponent<CollisionDetection>());
+
+                
+
                 if (hitInfo.collider.gameObject.CompareTag("Pirate")) {
                     //Reduce pirate HP. (Pirates require 2 hits to eliminate)
                     //NOTE: Change to pirate later on
@@ -67,6 +81,22 @@ public class HammerController : MonoBehaviour {
         return null;
     }
 
+    void Repair(CollisionDetection collision)
+    {
+        /*Debug.Log(collision.name);*/
+        if (collision.hitCount > 0 && supply >= 5)
+        {
+            // Repair the damage counting it down by one.
+            collision.Repair();
+            UseSupplyForRepair();
+            boatHealth.Repair();
+        }
+        else
+        {
+            Debug.Log("Insufficent Supplies or full health");
+        }
+    }
+
     void hitTree()
     {
         if(supply < maxSupply)
@@ -77,7 +107,7 @@ public class HammerController : MonoBehaviour {
         }
     }
 
-    void useSupplyForRepair()
+    void UseSupplyForRepair()
     {
         supply -= 5;
         supplyText.GetComponent<Text>().text = supply.ToString();

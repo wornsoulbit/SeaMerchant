@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BoatHealthController : MonoBehaviour
 {
 	private int maxHealth = 100;
-	private int currentHealth = 80;
+	private int currentHealth = 100;
 	private bool isDead = false;
 	//public GameObject healthBar;
 
@@ -38,19 +38,10 @@ public class BoatHealthController : MonoBehaviour
 
 	}
 
-	public bool Repair()
+	public void Repair()
     {
-		if(currentHealth < maxHealth)
-        {
 			currentHealth += 5;
 			healthBar.GetComponent<Slider>().value = (float)currentHealth;
-			return true;
-		}
-		else
-        {
-			return false;
-        }
-
 	}
 
 }

@@ -43,6 +43,7 @@ public class BoatController : MonoBehaviour {
 				player.GetComponent<PlayerController>().canMovePlayer = false;
 				Debug.Log("Got ON the steering wheel");
 				isMounted = true;
+				player.transform.SetParent(this.transform);
 			}
 
 			// If the "Escape" key is pressed
@@ -52,6 +53,7 @@ public class BoatController : MonoBehaviour {
 				player.GetComponent<PlayerController>().canMovePlayer = true;
 				Debug.Log("Got OFF the steering wheel");
 				isMounted = false;
+				player.transform.SetParent(null);
 			}
         }
         else
@@ -86,7 +88,6 @@ public class BoatController : MonoBehaviour {
 		}
 
 		transform.Translate(0.0f, 0.0f, verticalInput * Time.deltaTime * movementThreshold);
-		player.transform.position = new Vector3(wheel.transform.position.x, wheel.transform.position.y, wheel.transform.position.z + 0.5f);
 	}
 
 	void Steer()
@@ -95,8 +96,6 @@ public class BoatController : MonoBehaviour {
 		{
 			float horizontalInput = Input.GetAxis("Horizontal");
 			transform.Rotate(Vector3.up * horizontalInput * Time.deltaTime * (steerSpeed * 15));
-			player.transform.position = new Vector3(wheel.transform.position.x, wheel.transform.position.y, wheel.transform.position.z + 0.5f);
-			/*player.transform.Rotate(Vector3.up * horizontalInput * Time.deltaTime * steerSpeed);*/
 		}
 
 	}

@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject optionsMenu;
+    GameObject optionButton;
+    GameObject restart;
+    GameObject quit;
+
     void Start()
     {
-        
+        optionsMenu = GameObject.Find("OptionsMenu");
+        optionButton = GameObject.Find("Options");
+        restart = GameObject.Find("Restart");
+        quit = GameObject.Find("Quit");
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,6 +28,14 @@ public class LevelHandler : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+    }
+
+    public void Options()
+    {
+        restart.SetActive(false);
+        quit.SetActive(false);
+        optionButton.SetActive(false);
+        optionsMenu.SetActive(true);
     }
 
     public void Quit()

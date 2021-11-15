@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     GameObject hud;
     GameObject pauseMenu;
+    GameObject options;
+    GameObject optionsMenu;
 
     private void Start()
     {
@@ -36,6 +38,9 @@ public class PlayerController : MonoBehaviour
         isMounted = false;
         hud = GameObject.Find("HUD");
         pauseMenu = GameObject.Find("PauseMenu");
+        options = GameObject.Find("Options");
+        optionsMenu = GameObject.Find("OptionsMenu");
+        options.SetActive(false);
         pauseMenu.SetActive(false);
     }
 
@@ -119,7 +124,9 @@ public class PlayerController : MonoBehaviour
                 Pause();
                 Debug.Log("Pause");
                 hud.SetActive(false);
+                optionsMenu.SetActive(false);
                 pauseMenu.SetActive(true);
+                options.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }

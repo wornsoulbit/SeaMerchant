@@ -23,33 +23,16 @@ public class PlayerController : MonoBehaviour
 
     public Camera playerCamera;
     public bool canMovePlayer;
-    bool paused;
-    bool isMounted;
-
-    GameObject hud;
-    GameObject pauseMenu;
-    GameObject options;
-    GameObject optionsMenu;
 
     private void Start()
     {
         canMovePlayer = true;
-        paused = false;
-        isMounted = false;
-        hud = GameObject.Find("HUD");
-        pauseMenu = GameObject.Find("PauseMenu");
-        options = GameObject.Find("Options");
-        optionsMenu = GameObject.Find("OptionsMenu");
-        options.SetActive(false);
-        pauseMenu.SetActive(false);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        PauseUnPause();
-
         if (canMovePlayer)
         {
             // Checks if the player is on the ground.
@@ -102,46 +85,5 @@ public class PlayerController : MonoBehaviour
             controller.Move(velocity * Time.deltaTime);
         }
 
-    }
-
-    private void PauseUnPause()
-    {
-        isMounted = GameObject.FindGameObjectWithTag("Boat").GetComponent<BoatController>().isMounted;
-
-        if (Input.GetKeyDown(KeyCode.Escape) && !isMounted)
-        {
-            if (paused)
-            {
-                UnPause();
-                Debug.Log("Un-pause");
-                hud.SetActive(true);
-                pauseMenu.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else
-            {
-                Pause();
-                Debug.Log("Pause");
-                hud.SetActive(false);
-                optionsMenu.SetActive(false);
-                pauseMenu.SetActive(true);
-                options.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-        }
-    }
-
-    void Pause()
-    {
-        Time.timeScale = 0;
-        paused = true;
-    }
-
-    void UnPause()
-    {
-        Time.timeScale = 1;
-        paused = false;
     }
 }

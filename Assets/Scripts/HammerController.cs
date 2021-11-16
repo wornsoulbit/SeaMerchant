@@ -9,7 +9,9 @@ public class HammerController : MonoBehaviour {
     private int supply;
     private int maxSupply;
     public GameObject supplyText;
+    public AudioSource chopSound;
     BoatHealthController boatHealth;
+    
 
     public int dmg = 15;
 
@@ -35,6 +37,7 @@ public class HammerController : MonoBehaviour {
             if (Input.GetMouseButtonDown(0)) { //If left mouse button is pressed
                 Debug.Log("Object hit: " + hitInfo.collider.gameObject.name);
                 if (hitInfo.collider.gameObject.CompareTag("Tree")) {
+                    chopSound.Play();
                     //Change tree into chopped tree trunk.
                     //Add wood to player's resources.
                     hitInfo.collider.gameObject.GetComponent<TreeController>().hammerHit();

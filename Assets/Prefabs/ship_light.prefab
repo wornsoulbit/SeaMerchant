@@ -1,5 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1617867760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617867764}
+  - component: {fileID: 1617867763}
+  - component: {fileID: 1617867762}
+  - component: {fileID: 1617867761}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1617867764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617867760}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 13.090352, z: 0.31251907}
+  m_LocalScale: {x: 1.0992813, y: 1.3028518, z: 1.0992813}
+  m_Children: []
+  m_Father: {fileID: 647812110673136049}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1617867763
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617867760}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1617867762
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617867760}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9bdbf8f82fbee3a488d824b99a4af86c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1617867761
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617867760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &349073352320028327
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,9 +106,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4789856557881456328}
   - component: {fileID: 2649841054585577583}
+  - component: {fileID: 148248627}
   m_Layer: 7
   m_Name: ColliderBackL
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +141,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.4117565, y: 20.19363, z: 15.732729}
   m_Center: {x: 3.7056713, y: -9.596782, z: 21.437757}
+--- !u!114 &148248627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349073352320028327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &647812110672844205
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +167,7 @@ GameObject:
   - component: {fileID: 647812110673136013}
   - component: {fileID: 647812110673906093}
   - component: {fileID: 647812110675037037}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: sail_front 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +249,7 @@ GameObject:
   - component: {fileID: 647812110673136015}
   - component: {fileID: 647812110673906095}
   - component: {fileID: 647812110675037039}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: sail_back 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,9 +334,9 @@ GameObject:
   - component: {fileID: 647812110400111008}
   - component: {fileID: 2525859267665684648}
   - component: {fileID: 8619017338127621553}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: ship_light
-  m_TagString: Untagged
+  m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +348,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647812110672844241}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.527933, y: 0.6782676, z: 229.89726}
   m_LocalScale: {x: 0.32, y: 0.27, z: 0.32}
   m_Children:
@@ -245,6 +357,7 @@ Transform:
   - {fileID: 647812110673136013}
   - {fileID: 647812110673136051}
   - {fileID: 647812110673136055}
+  - {fileID: 1617867764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -328,9 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f541da6a9d27d4445a704ef0df7d3268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  isDead: 0
   healthBar: {fileID: 0}
 --- !u!114 &8619017338127621553
 MonoBehaviour:
@@ -344,14 +454,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52bb823f142fd949bf002491cb4b87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 15
   steerSpeed: 1
   movementThreshold: 2
   wheel: {fileID: 647812111240706889}
   player: {fileID: 0}
   interactImage: {fileID: 0}
-  playerCamera: {fileID: 0}
   cameraStartPosition: {x: 0, y: 0, z: 0}
+  isMounted: 0
 --- !u!1 &647812110672844243
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +473,7 @@ GameObject:
   - component: {fileID: 647812110673136051}
   - component: {fileID: 647812110673906131}
   - component: {fileID: 647812110675037075}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: sail_middle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +556,7 @@ GameObject:
   - component: {fileID: 647812110673906135}
   - component: {fileID: 647812110675037079}
   - component: {fileID: 647812111750379512}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: steering 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647812111240706934}
   - component: {fileID: 647812111240706935}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: SteeringMount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769519bdefd83da44987189a8fcd8baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.8
+  radius: 2
 --- !u!1 &1579843389115915328
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,9 +696,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5385175902218373287}
   - component: {fileID: 8105739024539348513}
+  - component: {fileID: 1374959720}
   m_Layer: 7
   m_Name: ColliderMiddleR
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -620,6 +731,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.4117565, y: 10.2429905, z: 30.894405}
   m_Center: {x: 3.7056713, y: -4.621459, z: 20.234522}
+--- !u!114 &1374959720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579843389115915328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &4500926614572277754
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,9 +756,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3919833249986911816}
   - component: {fileID: 1641488293136146570}
+  - component: {fileID: 1237478773}
   m_Layer: 7
   m_Name: ColliderBackR
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,6 +791,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.4117565, y: 20.19363, z: 16.335594}
   m_Center: {x: 3.7056713, y: -9.596782, z: 21.739191}
+--- !u!114 &1237478773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4500926614572277754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &4510894425227840898
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,9 +816,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7475840524774671808}
   - component: {fileID: 5590802820573483878}
+  - component: {fileID: 1163082181}
   m_Layer: 7
   m_Name: ColliderBack
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,6 +851,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 28.07115, y: 20.60257, z: 6.6803875}
   m_Center: {x: 4.0108576, y: -7.5142674, z: 28.92017}
+--- !u!114 &1163082181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510894425227840898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &4827963873075878619
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,9 +876,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5103722187017467788}
   - component: {fileID: 1461856156439135165}
+  - component: {fileID: 1771454316}
   m_Layer: 7
   m_Name: ColliderMiddlePole
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -752,6 +911,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.452276, y: 38.57476, z: 2.4289608}
   m_Center: {x: 3.135388, y: 15.4302845, z: 12.051702}
+--- !u!114 &1771454316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827963873075878619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &5279854499989432292
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,9 +936,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7424742836844673623}
   - component: {fileID: 5593419032724139945}
+  - component: {fileID: 657023789}
   m_Layer: 7
   m_Name: ColliderFrontPole
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,6 +971,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3837752, y: 29.662733, z: 2.1274567}
   m_Center: {x: 3.1696398, y: 12.761589, z: 11.757708}
+--- !u!114 &657023789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5279854499989432292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &5413801562948379272
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,9 +996,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2897424464941213710}
   - component: {fileID: 2425103252700291085}
+  - component: {fileID: 282305288}
   m_Layer: 7
   m_Name: ColliderFrontL
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,6 +1031,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.250002, y: 4.5136213, z: 19.201616}
   m_Center: {x: 3.1248763, y: -1.7568053, z: 9.100861}
+--- !u!114 &282305288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413801562948379272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &6088006380026079510
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +1057,7 @@ GameObject:
   - component: {fileID: 570232125083569394}
   m_Layer: 7
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -894,9 +1100,10 @@ GameObject:
   m_Component:
   - component: {fileID: 327137309265246001}
   - component: {fileID: 3428352436243718645}
+  - component: {fileID: 903800999}
   m_Layer: 7
   m_Name: ColliderBackMidTop
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -928,6 +1135,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.4117565, y: 3.8418329, z: 13.864082}
   m_Center: {x: 3.7056713, y: -3.9257905, z: 22.372076}
+--- !u!114 &903800999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284765138433453338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &6539852397153707562
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,9 +1160,10 @@ GameObject:
   m_Component:
   - component: {fileID: 422498461557664256}
   - component: {fileID: 8397759835915029150}
+  - component: {fileID: 1497592842}
   m_Layer: 7
   m_Name: ColliderFrontR
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -972,6 +1195,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.2500014, y: 4.5136213, z: 12.893573}
   m_Center: {x: 3.1247292, y: -1.7567917, z: 11.234078}
+--- !u!114 &1497592842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539852397153707562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &7348404940608742020
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,9 +1220,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1985330031792022664}
   - component: {fileID: 1806795226647963275}
+  - component: {fileID: 1439091349}
   m_Layer: 7
   m_Name: ColliderFrontMid
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1016,6 +1255,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.264799, y: 2.837052, z: 4.672909}
   m_Center: {x: 3.1883261, y: -0.7837004, z: 12.268782}
+--- !u!114 &1439091349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348404940608742020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &7660137241837005161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,9 +1280,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3401972739978859245}
   - component: {fileID: 2767282439830523187}
+  - component: {fileID: 1081859544}
   m_Layer: 7
   m_Name: ColliderBackDoor
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1060,6 +1315,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.140834, y: 13.764238, z: 4.489091}
   m_Center: {x: 4.0702105, y: -8.887, z: 17.684578}
+--- !u!114 &1081859544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660137241837005161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &8342807466382197008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,9 +1340,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6373584797315328263}
   - component: {fileID: 8223145852556921927}
+  - component: {fileID: 288980255}
   m_Layer: 7
   m_Name: ColliderMiddleL
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1104,6 +1375,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.4117565, y: 10.2429905, z: 30.894405}
   m_Center: {x: 3.7056713, y: -4.621459, z: 20.234522}
+--- !u!114 &288980255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342807466382197008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &8539024487454276694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,9 +1400,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4270125704652167713}
   - component: {fileID: 4598512403454466378}
+  - component: {fileID: 687479928}
   m_Layer: 7
   m_Name: ColliderBackPole
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1148,6 +1435,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3837752, y: 34.799885, z: 2.1274567}
   m_Center: {x: 3.1696398, y: 15.330166, z: 11.757708}
+--- !u!114 &687479928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539024487454276694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0
 --- !u!1 &8729375371447849613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,9 +1460,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8885992510036435984}
   - component: {fileID: 4881865500255996174}
+  - component: {fileID: 9953734}
   m_Layer: 7
   m_Name: ColliderMiddle
-  m_TagString: Untagged
+  m_TagString: BoatColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1192,3 +1495,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.8105345, y: 10.242991, z: 33.427746}
   m_Center: {x: 4.4050603, y: -4.62146, z: 21.501192}
+--- !u!114 &9953734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729375371447849613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 647812110672844241}
+  dmg: 20
+  hitCount: 0

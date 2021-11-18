@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public Animator damg;
+    private Animation walkingAnimation;
+    public GameObject playerModel;
 
     Vector3 velocity;
     bool isGrounded;
@@ -73,6 +75,10 @@ public class PlayerController : MonoBehaviour
             // Where the player will move in the transform
             Vector3 move = transform.right * x + transform.forward * y;
             controller.Move(move * speed * Time.deltaTime);
+            if(x != 1 && y != 0) {
+                walkingAnimation = playerModel.GetComponent<Animation>();
+                walkingAnimation.Play("walking");
+            }
 
             // Jump
             if (Input.GetButtonDown("Jump") && isGrounded)

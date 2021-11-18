@@ -11,6 +11,7 @@ public class HammerController : MonoBehaviour {
     public GameObject supplyText;
     public AudioSource chopSound;
     BoatHealthController boatHealth;
+    private Animation hammerAnimation;
     
 
     public int dmg = 15;
@@ -36,6 +37,8 @@ public class HammerController : MonoBehaviour {
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
             if (Input.GetMouseButtonDown(0)) { //If left mouse button is pressed
                 Debug.Log("Object hit: " + hitInfo.collider.gameObject.name);
+                hammerAnimation = this.GetComponent<Animation>();
+                hammerAnimation.Play("hammer");
                 if (hitInfo.collider.gameObject.CompareTag("Tree")) {
                     chopSound.Play();
                     //Change tree into chopped tree trunk.

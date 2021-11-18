@@ -32,13 +32,14 @@ public class HammerController : MonoBehaviour {
         Ray ray = new Ray(camera.transform.position, camera.transform.forward);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, rayDistance))
-        {
+        if (Input.GetMouseButtonDown(0)) {
+            hammerAnimation = this.GetComponent<Animation>();
+            hammerAnimation.Play("hammer");
+            if (Physics.Raycast(ray, out hitInfo, rayDistance)){
             Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
-            if (Input.GetMouseButtonDown(0)) { //If left mouse button is pressed
+             //If left mouse button is pressed
                 Debug.Log("Object hit: " + hitInfo.collider.gameObject.name);
-                hammerAnimation = this.GetComponent<Animation>();
-                hammerAnimation.Play("hammer");
+
                 if (hitInfo.collider.gameObject.CompareTag("Tree")) {
                     chopSound.Play();
                     //Change tree into chopped tree trunk.

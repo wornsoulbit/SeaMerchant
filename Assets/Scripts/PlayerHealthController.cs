@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PlayerHealthController : MonoBehaviour
 				{
 					TakeDamage(20);
 				}*/
+		if(currentHealth == 0)
+        {
+
+        }
 	}
 
 	public void TakeDamage(int damage)

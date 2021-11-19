@@ -27,8 +27,8 @@ public class PlayerHealthController : MonoBehaviour
 				}*/
 		if(currentHealth == 0)
         {
-
-        }
+			SceneManager.LoadScene("DeathScreen");
+		}
 	}
 
 	public void TakeDamage(int damage)

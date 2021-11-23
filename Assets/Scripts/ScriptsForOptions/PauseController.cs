@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
-
+    // Pause Menu objects.
     GameObject hud;
     GameObject restart;
     GameObject quit;
@@ -13,7 +14,6 @@ public class PauseController : MonoBehaviour
     GameObject optionsMenu;
 
     bool paused;
-    bool isMounted;
     bool isOptionsActive;
 
     // Start is called before the first frame update
@@ -30,9 +30,7 @@ public class PauseController : MonoBehaviour
         PauseMenuUiControl(false);
         optionsMenu.SetActive(false);
 
-        // Local vars to keep track if the player is on the boat or 
-        // if the game is paused.
-        isMounted = false;
+        // Local vars to keep track if the the game is paused.
         isOptionsActive = false;
         paused = false;
     }
@@ -46,7 +44,7 @@ public class PauseController : MonoBehaviour
     private void PauseUnPause()
     {
         // Checks if the player is mounted on the boat.
-        isMounted = GameObject.FindGameObjectWithTag("Boat").GetComponent<BoatController>().isMounted;
+        bool isMounted = GameObject.FindGameObjectWithTag("Boat").GetComponent<BoatController>().isMounted;
 
         // If the player pressed escape key and is not on the boat the game will
         // either pause or unpause.
@@ -56,7 +54,6 @@ public class PauseController : MonoBehaviour
             {
                 UnPause();
                 PauseMenuUiControl(false);
-                Debug.Log("Un-pause");
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = false;
             }
@@ -64,7 +61,6 @@ public class PauseController : MonoBehaviour
             {
                 Pause();
                 PauseMenuUiControl(true);
-                Debug.Log("Pause");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }

@@ -13,8 +13,6 @@ public class BoatController : MonoBehaviour {
 	public GameObject interactImage;
 	public Vector3 cameraStartPosition;
 
-
-
 	public bool isMounted;
 
     // Update is called once per frame

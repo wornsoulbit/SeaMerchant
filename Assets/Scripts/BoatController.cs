@@ -43,15 +43,17 @@ public class BoatController : MonoBehaviour {
 				isMounted = true;
 				player.transform.SetParent(this.transform);
 			}
-
 			// If the "Escape" key is pressed
-			if (Input.GetKeyDown(KeyCode.Escape) && isMounted)
+			else if (Input.GetKeyDown(KeyCode.E) && isMounted)
 			{
 				// Re-enables the character movement
 				player.GetComponent<PlayerController>().canMovePlayer = true;
 				Debug.Log("Got OFF the steering wheel");
 				isMounted = false;
 				player.transform.SetParent(null);
+			}
+			else{
+				//suck my balls
 			}
         }
         else

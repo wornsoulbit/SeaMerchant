@@ -6,7 +6,8 @@ public class CollisionDetection : MonoBehaviour
 {
 
     public GameObject boat;
-    public int dmg = 20;
+    public int cannonDmg = 20;
+    public int environmentDmg = 10;
     public int hitCount;
 
     private void Start()
@@ -25,10 +26,14 @@ public class CollisionDetection : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CannonBall"))
         {
-            boat.GetComponent<BoatHealthController>().TakeDamage(dmg);
+            boat.GetComponent<BoatHealthController>().TakeDamage(cannonDmg);
             hitCount += 3;
             // particle effect should be here
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.layer == LayerMask.NameToLayer("Ground")){
+            boat.GetComponent<BoatHealthController>().TakeDamage(environmentDmg);
+            hitCount += 3;
         }
     }
 

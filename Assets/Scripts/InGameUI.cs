@@ -19,17 +19,21 @@ public class InGameUI : MonoBehaviour {
             }
             else if (SceneManager.GetActiveScene().buildIndex == LEVEL_3_BUILD_INDEX) // If is last Scene (Level 3 only)
             {
-                //Display "Game Completed" screen
+                //Display "Game Completed" 
+
+                ReturnToMainMenu(); //<--Placeholder
             }
         }
     }
 
-    public void ReturnToMainMenu() {
-        // TODO: Remove placeholder if statement (it is for debugging only)
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            SceneManager.LoadScene(0);
+    public void EnableDeveloperShortcuts() {
+        if (Input.GetKeyDown(KeyCode.Alpha0)) {
+            ReturnToMainMenu();
         }
+    }
+
+    public void ReturnToMainMenu() {
+        SceneManager.LoadScene(MAIN_MENU_BUILD_INDEX);
     }
 
     /*
@@ -41,6 +45,6 @@ public class InGameUI : MonoBehaviour {
         TransitionToNextLevel();
 
         //PLACEHOLDER
-        ReturnToMainMenu();
+        EnableDeveloperShortcuts();
     }
 }

@@ -11,6 +11,7 @@ public class BoatController : MonoBehaviour {
 	public GameObject wheel;
 	public GameObject player;
 	public GameObject interactImage;
+	public GameObject hammer;
 	public Vector3 cameraStartPosition;
 
 	public bool isMounted;
@@ -42,15 +43,21 @@ public class BoatController : MonoBehaviour {
 				Debug.Log("Got ON the steering wheel");
 				isMounted = true;
 				player.transform.SetParent(this.transform);
+
+				// hides hammer
+				hammer.SetActive(false);
 			}
 			// If the "Escape" key is pressed
 			else if (Input.GetKeyDown(KeyCode.E) && isMounted)
 			{
-				// Re-enables the character movement
-				player.GetComponent<PlayerController>().canMovePlayer = true;
+                // Re-enables the character movement
+                player.GetComponent<PlayerController>().canMovePlayer = true;
 				Debug.Log("Got OFF the steering wheel");
 				isMounted = false;
 				player.transform.SetParent(null);
+
+				//unhides hammer
+				hammer.SetActive(true);
 			}
 			else{
 				//suck my balls

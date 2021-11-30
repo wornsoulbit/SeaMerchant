@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BoatHealthController : MonoBehaviour
@@ -20,11 +21,10 @@ public class BoatHealthController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		/*		if (Input.GetKeyDown(KeyCode.Space))
-				{
-					TakeDamage(20);
-				}*/
-
+		if (currentHealth == 0)
+		{
+			SceneManager.LoadScene("DeathScreen");
+		}
 	}
 
 	public void TakeDamage(int damage)

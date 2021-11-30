@@ -9,12 +9,15 @@ public class PauseController : MonoBehaviour
     // Pause Menu objects.
     GameObject hud;
     GameObject restart;
-    GameObject quit;
+    GameObject mainMenu;
     GameObject options;
     GameObject optionsMenu;
 
     bool paused;
     bool isOptionsActive;
+
+    public Animator transition;
+    public float transistionTime = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,7 @@ public class PauseController : MonoBehaviour
         // Assigning UI elements so that they can be modified.
         hud = GameObject.Find("HUD");
         restart = GameObject.Find("Restart");
-        quit = GameObject.Find("Quit");
+        mainMenu = GameObject.Find("MainMenu");
         options = GameObject.Find("Options");
         optionsMenu = GameObject.Find("OptionsMenu");
 
@@ -85,6 +88,28 @@ public class PauseController : MonoBehaviour
         Application.Quit();
     }
 
+    public void MainMenu()
+    {
+        StartCoroutine(LoadLevel(0));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        Debug.Log("Starting Level Transisition");
+        /*musicTransition.SetTrigger("Start");*/
+
+        yield return new WaitForSeconds(transistionTime);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
+
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+    }
+
     /// <summary>
     /// Controls which UI elements are active in the game scene. 
     /// </summary>
@@ -94,7 +119,7 @@ public class PauseController : MonoBehaviour
         hud.SetActive(!isActive);
         options.SetActive(isActive);
         restart.SetActive(isActive);
-        quit.SetActive(isActive);
+        mainMenu.SetActive(isActive);
         options.SetActive(isActive);
 
         if (isOptionsActive)
@@ -115,4 +140,6 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 1;
         paused = false;
     }
+
+
 }

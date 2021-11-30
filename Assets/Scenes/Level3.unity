@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1539293446}
-  m_IndirectSpecularColor: {r: 0.34853557, g: 0.5842361, b: 0.88406986, a: 1}
+  m_IndirectSpecularColor: {r: 0.3484235, g: 0.5842008, b: 0.8840766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7307ed53ab1dc504c91dda20b7fb3f9e, type: 2}
   m_LightingSettings: {fileID: 956493870}
 --- !u!196 &4
 NavMeshSettings:
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 579462063}
   - component: {fileID: 579462062}
   - component: {fileID: 579462061}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

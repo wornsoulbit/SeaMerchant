@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2549286246409765160}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.19, z: 0}
+  m_LocalPosition: {x: 0, y: 1.901, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2643839857577350932}
@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 2549286246416156077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 41.353607, y: 14.429196, z: 256.55646}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7888776, y: 1.7888776, z: 1.7888776}
   m_Children:
   - {fileID: 2660038761101426850}
   - {fileID: 2549286246409765172}
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2549286246416156075}
-  speed: 12
+  speed: 25
   gravity: -9.81
-  jumpHeight: 3
+  jumpHeight: 6
   originalHeight: 3
   crouchHeight: 1.5
   viewBob: 0

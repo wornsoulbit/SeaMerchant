@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1539293446}
-  m_IndirectSpecularColor: {r: 0.34837627, g: 0.58418274, b: 0.8840765, a: 1}
+  m_IndirectSpecularColor: {r: 0.3484235, g: 0.5842008, b: 0.8840766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 579462063}
   - component: {fileID: 579462062}
   - component: {fileID: 579462061}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

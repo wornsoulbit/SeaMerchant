@@ -15,10 +15,10 @@ public class SceneSwitcherHandler : MonoBehaviour
 
     public void RestartLevel()
     {
-        /*        string sceneName = PlayerPrefs.GetString("lastLoadedScene");
-                SceneManager.LoadScene(sceneName);*/
-        /*PlayerPrefs.SetInt("lastLevel", SceneManager.GetActiveScene().buildIndex);*/
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        string sceneName = PlayerPrefs.GetString("lastLoadedScene");
+        SceneManager.LoadScene(sceneName);
+        PlayerPrefs.SetInt("lastLevel", SceneManager.GetActiveScene().buildIndex);
+        /*SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);*/
     }
 
     public void MainMenu()

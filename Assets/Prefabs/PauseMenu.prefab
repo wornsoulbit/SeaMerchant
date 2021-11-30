@@ -1487,7 +1487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: Main Menu
 --- !u!1 &7908185329295922827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,7 +2007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7908185329691283448}
   - component: {fileID: 7908185329691283334}
-  - component: {fileID: 154671811}
+  - component: {fileID: 7908185329389895113}
   m_Layer: 5
   m_Name: MouseSenseSlider
   m_TagString: Untagged
@@ -2089,7 +2089,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &154671811
+--- !u!114 &7908185329389895113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2191,7 +2191,7 @@ GameObject:
   - component: {fileID: 7908185329913496737}
   - component: {fileID: 7908185329913496736}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2301,7 +2301,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7908185328246371183}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

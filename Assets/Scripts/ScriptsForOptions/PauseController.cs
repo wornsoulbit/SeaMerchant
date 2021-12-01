@@ -97,7 +97,7 @@ public class PauseController : MonoBehaviour
     {
         transition.SetTrigger("Start");
         Debug.Log("Starting Level Transisition");
-        /*musicTransition.SetTrigger("Start");*/
+        /*musicTransition.SetTrigger("Start");*//*
 
         yield return new WaitForSeconds(transistionTime);
 
@@ -107,7 +107,10 @@ public class PauseController : MonoBehaviour
         while (!operation.isDone)
         {
             yield return null;
-        }
+        }*/
+        SceneManager.LoadScene(levelIndex);
+
+        yield return null;
     }
 
     /// <summary>

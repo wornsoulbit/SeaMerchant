@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;
-    public GameObject timeLeftText;
-    public GameObject countDownText;
 
     public int secondsLeft = 0;
     public bool takingAway = false;
@@ -31,6 +29,7 @@ public class TimerCountdown : MonoBehaviour
             PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("DeathScreen");
         }
+
 
     }
 

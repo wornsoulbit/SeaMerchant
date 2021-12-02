@@ -12,6 +12,7 @@ TagManager:
   - Tree
   - Hammer
   - BoatColliders
+  - OnBoatChecker
   layers:
   - Default
   - TransparentFX

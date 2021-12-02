@@ -19,6 +19,13 @@ public class PirateRadius3 : MonoBehaviour {
             Debug.Log("Pirate in range to ATTACK player.", radiusTarget);
             pirateController.ResetAttackCooldown();
         }
+        if(other.gameObject.CompareTag("OnBoatChecker")){
+            pirateController.OnBoat = true;
+        }
+        if (other.gameObject.CompareTag("Water"))
+		{
+			Destroy(this.gameObject);
+		}
     }
 
     private void OnTriggerStay(Collider other) {
@@ -41,6 +48,9 @@ public class PirateRadius3 : MonoBehaviour {
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             Debug.Log("Pirate NOT in range ATTACK player.", radiusTarget);
+        }
+        if(other.gameObject.CompareTag("OnBoatChecker")){
+            pirateController.OnBoat = false;
         }
     }
 }

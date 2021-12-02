@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PirateController : MonoBehaviour
 {
+    float heigh = 4f;
     public bool OnBoat = false;
     private GameObject target;
     public Transform target2;
@@ -32,22 +33,45 @@ public class PirateController : MonoBehaviour
     private void Start() {
         pirateAnimation.SetupBehaviour();   
         rig = GetComponent<Rigidbody>();
-        Debug.Log(boatJumpTarget);
+        target2 = GameObject.FindGameObjectWithTag("Player").transform;
+        boatJumpTarget = GameObject.FindGameObjectWithTag("PirateJumpPoint");
     }
 
     private void Update() {
+        bool Jumping = false;
         if(!OnBoat){
             float distance = Vector3.Distance(this.gameObject.transform.position, boatJumpTarget.transform.position);
             Debug.Log(distance);
+            if(distance <= 45){
+                // ParabolicMove(this.gameObject.transform, this.gameObject.transform.position, boatJumpTarget.transform.position, 15f);
+                Jumping = true;
+            }
+            if(Jumping){
+                Vector3 pos = Vector3.MoveTowards(transform.position, boatJumpTarget.transform.position, (speed*20) * Time.fixedDeltaTime);
+                rig.MovePosition(pos);
+                transform.LookAt(target2);
+                transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
+            }
+        }
+        else{
+            Jumping = false;
         }
     }
 
+    public void ParabolicMove(Transform target, Vector3 a, Vector3 b, float time)
+     {
+         float target_X = a.x + (b.x - a.x) * time;
+         float maxHeigh = (a.y + b.y) / 2 + heigh;
+         float target_Y = a.y + ((b.y - a.y)) * time + heigh * (1-(Mathf.Abs(0.5f - time) / 0.5f) * (Mathf.Abs(0.5f - time) / 0.5f));
+         target.position = new Vector3(target_X, target_Y);
+     }
+
     private void FixedUpdate() {
         if(OnBoat){
-        Vector3 pos = Vector3.MoveTowards(transform.position, target2.position, speed * Time.fixedDeltaTime);
-        rig.MovePosition(pos);
-        transform.LookAt(target2);
-        transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
+            Vector3 pos = Vector3.MoveTowards(transform.position, target2.position, speed * Time.fixedDeltaTime);
+            rig.MovePosition(pos);
+            transform.LookAt(target2);
+            transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
         }
     }
 
@@ -120,17 +144,5 @@ public class PirateController : MonoBehaviour
     public void SetTargetDirection(Collider other) {
         if (!agent.destination.Equals(other.gameObject.transform.position))
             agent.SetDestination(other.transform.position);
-    }
-    
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("OnBoatChecker")){
-            OnBoat = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        if(other.gameObject.CompareTag("OnBoatChecker")){
-            OnBoat = false;
-        }
     }
 }

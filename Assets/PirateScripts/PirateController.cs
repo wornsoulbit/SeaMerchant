@@ -81,7 +81,7 @@ public class PirateController : MonoBehaviour
     }
 
     private int cooldown; //"cooldown" set to "COOLDOWN_THRESHOLD" in "Awake()".
-    private const int COOLDOWN_THRESHOLD = 40;
+    private const int COOLDOWN_THRESHOLD = 60;
     private const int DAMAGING_FRAME = COOLDOWN_THRESHOLD / 4 * 3; //This will give half of COOLDOWN_THRESHOLD
     public void Attack() {
         if (target != null && target.CompareTag("Player")) {

@@ -5,7 +5,11 @@ using UnityEngine.AI;
 
 public class PirateController : MonoBehaviour
 {
+    public bool OnBoat = false;
     private GameObject target;
+    public Transform target2;
+    public float speed = 4f;
+    Rigidbody rig;
     private PlayerHealthController playerHealthController;
     private const int PIRATE_ATTACK_DAMAGE = 20;
     //public bool isChasingTarget;
@@ -25,7 +29,21 @@ public class PirateController : MonoBehaviour
     }
     
     private void Start() {
-        pirateAnimation.SetupBehaviour();    
+        pirateAnimation.SetupBehaviour();   
+        rig = GetComponent<Rigidbody>(); 
+    }
+
+    private void Update() {
+        
+    }
+
+    private void FixedUpdate() {
+        if(OnBoat){
+        Vector3 pos = Vector3.MoveTowards(transform.position, target2.position, speed * Time.fixedDeltaTime);
+        rig.MovePosition(pos);
+        transform.LookAt(target2);
+        transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
+        }
     }
 
     //GETTER
@@ -45,12 +63,14 @@ public class PirateController : MonoBehaviour
     }
     
     public void MovePirate() {
-        if (!agent.isStopped) {
-            pirateAnimation.UpdateMovementAnimation(agent.desiredVelocity.magnitude);
-            Debug.Log("MOVING_1");
-        } else {
-            pirateAnimation.UpdateMovementAnimation(0);
-            Debug.Log("MOVING_2");
+        if(!OnBoat){
+            if (!agent.isStopped) {
+                pirateAnimation.UpdateMovementAnimation(agent.desiredVelocity.magnitude);
+                Debug.Log("MOVING_1");
+            } else {
+                pirateAnimation.UpdateMovementAnimation(0);
+                Debug.Log("MOVING_2");
+            }
         }
     }
     
@@ -97,4 +117,15 @@ public class PirateController : MonoBehaviour
             agent.SetDestination(other.transform.position);
     }
     
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("OnBoatChecker")){
+            OnBoat = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if(other.gameObject.CompareTag("OnBoatChecker")){
+            OnBoat = false;
+        }
+    }
 }

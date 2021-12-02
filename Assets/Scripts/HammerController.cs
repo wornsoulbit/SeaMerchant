@@ -15,6 +15,7 @@ public class HammerController : MonoBehaviour {
     
 
     public int dmg = 15;
+    public int pirateDmg = 35;
 
     private void Start()
     {
@@ -75,7 +76,7 @@ public class HammerController : MonoBehaviour {
                 if (hitInfo.collider.gameObject.CompareTag("Pirate")) {
                     //Reduce pirate HP. (Pirates require 2 hits to eliminate)
                     //NOTE: Change to pirate later on
-                    //hitInfo.collider.gameObject.GetComponent<BoatHealthController>().TakeDamage(dmg);
+                    hitInfo.collider.gameObject.GetComponent<PirateHealthController>().TakeDamage(-pirateDmg);
                     //Debug.Log("hitting something");
 
                 }

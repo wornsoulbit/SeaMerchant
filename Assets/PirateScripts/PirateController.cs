@@ -8,6 +8,7 @@ public class PirateController : MonoBehaviour
     public bool OnBoat = false;
     private GameObject target;
     public Transform target2;
+    public GameObject boatJumpTarget;
     public float speed = 4f;
     Rigidbody rig;
     private PlayerHealthController playerHealthController;
@@ -30,11 +31,15 @@ public class PirateController : MonoBehaviour
     
     private void Start() {
         pirateAnimation.SetupBehaviour();   
-        rig = GetComponent<Rigidbody>(); 
+        rig = GetComponent<Rigidbody>();
+        Debug.Log(boatJumpTarget);
     }
 
     private void Update() {
-        
+        if(!OnBoat){
+            float distance = Vector3.Distance(this.gameObject.transform.position, boatJumpTarget.transform.position);
+            Debug.Log(distance);
+        }
     }
 
     private void FixedUpdate() {

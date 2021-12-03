@@ -12,7 +12,7 @@ public class HammerController : MonoBehaviour {
     public AudioSource chopSound;
     BoatHealthController boatHealth;
     private Animation hammerAnimation;
-    
+    public GameObject particles;
 
     public int dmg = 15;
     public int pirateDmg = 20;
@@ -112,6 +112,12 @@ public class HammerController : MonoBehaviour {
             supply += 2;
             //Debug.Log(supply);
             supplyText.GetComponent<Text>().text = supply.ToString();
+            GameObject particleInstance;
+            particleInstance = Instantiate(particles, this.transform.position, this.transform.rotation);
+            float spawnTime = Time.deltaTime;
+            if(spawnTime - Time.deltaTime > 1) {
+                Destroy(particleInstance);
+            }
         }
     }
 

@@ -116,17 +116,36 @@ public class BoatController : MonoBehaviour {
 
 	void EndLevelCheck()
     {
-		if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("EndOfLevel").transform.position) < 40f)
+		float distance = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("EndOfLevel").transform.position);
+		switch (SceneManager.GetActiveScene().buildIndex)
+		{
+			case 3:
+				if (distance < 40f)
+				{
+					NextLevelLoad();
+				}
+				break;
+			case 4:
+				if (distance < 100f)
+				{
+					NextLevelLoad();
+				}
+				break;
+		}
+        
+    }
+
+    void NextLevelLoad()
+    {
+		if (SceneManager.GetActiveScene().buildIndex < 4 && !end)
         {
-			if (SceneManager.GetActiveScene().buildIndex < 4 && !end)
-            {
-				StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-				end = true;
-				Debug.Log("End of level");
-			}
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            end = true;
+            Debug.Log("End of level");
         }
     }
-	IEnumerator LoadLevel(int levelIndex)
+
+    IEnumerator LoadLevel(int levelIndex)
 	{
 		Debug.Log("Starting Level Transisition");
 		/*musicTransition.SetTrigger("Start");*/

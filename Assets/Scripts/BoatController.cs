@@ -74,6 +74,7 @@ public class BoatController : MonoBehaviour {
 		{
 			Movement();
 			Steer();
+			EndLevelCheck();
 		}
 	}
 
@@ -106,4 +107,12 @@ public class BoatController : MonoBehaviour {
 		}
 
 	}
+
+	void EndLevelCheck()
+    {
+		if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("EndOfLevel").transform.position) < 40f)
+        {
+			Debug.Log("End of level");
+        }
+    }
 }

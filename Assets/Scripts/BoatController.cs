@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BoatController : MonoBehaviour {
 	[Space(15)]
@@ -12,12 +14,16 @@ public class BoatController : MonoBehaviour {
 	public GameObject player;
 	public GameObject interactImage;
 	public GameObject hammer;
+	public GameObject loadingScreen;
 	public Vector3 cameraStartPosition;
 
 	public bool isMounted;
+	public Slider slider;
 
-    // Update is called once per frame
-    void Update()
+	private bool end = false;
+
+	// Update is called once per frame
+	void Update()
 	{
 
 		// Distance between the player and steering wheel
@@ -112,7 +118,27 @@ public class BoatController : MonoBehaviour {
     {
 		if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("EndOfLevel").transform.position) < 40f)
         {
-			Debug.Log("End of level");
+			if (SceneManager.GetActiveScene().buildIndex !> 4 && !end)
+            {
+				StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+				end = true;
+				Debug.Log("End of level");
+			}
         }
     }
+	IEnumerator LoadLevel(int levelIndex)
+	{
+		Debug.Log("Starting Level Transisition");
+		/*musicTransition.SetTrigger("Start");*/
+
+		AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
+
+		loadingScreen.SetActive(true);
+
+		while (!operation.isDone)
+		{
+			slider.value = operation.progress;
+			yield return null;
+		}
+	}
 }

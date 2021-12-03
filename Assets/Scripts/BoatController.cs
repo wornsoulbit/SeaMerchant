@@ -118,7 +118,7 @@ public class BoatController : MonoBehaviour {
     {
 		if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("EndOfLevel").transform.position) < 40f)
         {
-			if (SceneManager.GetActiveScene().buildIndex !> 4 && !end)
+			if (SceneManager.GetActiveScene().buildIndex < 4 && !end)
             {
 				StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
 				end = true;

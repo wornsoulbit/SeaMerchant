@@ -35,7 +35,6 @@ public class BoatHealthController : MonoBehaviour
 			isDead = true;
         }
 		healthBar.GetComponent<Slider>().value = (float)currentHealth;
-
 	}
 
 	public void Repair()

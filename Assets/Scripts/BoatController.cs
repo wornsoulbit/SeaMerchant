@@ -117,15 +117,16 @@ public class BoatController : MonoBehaviour {
 	void EndLevelCheck()
     {
 		float distance = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("EndOfLevel").transform.position);
+
 		switch (SceneManager.GetActiveScene().buildIndex)
 		{
-			case 3:
+			case 2:
 				if (distance < 40f)
 				{
 					NextLevelLoad();
 				}
 				break;
-			case 4:
+			case 3:
 				if (distance < 100f)
 				{
 					NextLevelLoad();

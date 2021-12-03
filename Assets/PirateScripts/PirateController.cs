@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PirateController : MonoBehaviour
 {
-    float heigh = 4f;
+    // float heigh = 4f;
     public bool OnBoat = false;
     private GameObject target;
     public Transform target2;
@@ -58,13 +58,13 @@ public class PirateController : MonoBehaviour
         }
     }
 
-    public void ParabolicMove(Transform target, Vector3 a, Vector3 b, float time)
-     {
-         float target_X = a.x + (b.x - a.x) * time;
-         float maxHeigh = (a.y + b.y) / 2 + heigh;
-         float target_Y = a.y + ((b.y - a.y)) * time + heigh * (1-(Mathf.Abs(0.5f - time) / 0.5f) * (Mathf.Abs(0.5f - time) / 0.5f));
-         target.position = new Vector3(target_X, target_Y);
-     }
+    // public void ParabolicMove(Transform target, Vector3 a, Vector3 b, float time)
+    //  {
+    //      float target_X = a.x + (b.x - a.x) * time;
+    //      float maxHeigh = (a.y + b.y) / 2 + heigh;
+    //      float target_Y = a.y + ((b.y - a.y)) * time + heigh * (1-(Mathf.Abs(0.5f - time) / 0.5f) * (Mathf.Abs(0.5f - time) / 0.5f));
+    //      target.position = new Vector3(target_X, target_Y);
+    //  }
 
     private void FixedUpdate() {
         if(OnBoat){

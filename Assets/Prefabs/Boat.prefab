@@ -102,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &2065287566884024032
 GameObject:
@@ -162,7 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &2463621337012719762
 GameObject:
@@ -318,7 +320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &3084393050293360683
 GameObject:
@@ -589,8 +592,11 @@ MonoBehaviour:
   wheel: {fileID: 3084393050293360683}
   player: {fileID: 0}
   interactImage: {fileID: 0}
+  hammer: {fileID: 0}
+  loadingScreen: {fileID: 0}
   cameraStartPosition: {x: 0, y: 0, z: 0}
   isMounted: 0
+  slider: {fileID: 0}
 --- !u!1 &3084393050789656245
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &5173032685713244646
 GameObject:
@@ -1015,7 +1022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &5223837680587409931
 GameObject:
@@ -1047,7 +1055,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2727305149042569104}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &312954245309509201
 BoxCollider:
@@ -1075,7 +1083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &5906208942902076018
 GameObject:
@@ -1135,7 +1144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &6102446809060941620
 GameObject:
@@ -1167,7 +1177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2727305149042569104}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2153204575626623528
 BoxCollider:
@@ -1195,7 +1205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &6562996088476316143
 GameObject:
@@ -1255,7 +1266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &6795657395661485373
 GameObject:
@@ -1331,7 +1343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2727305149042569104}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3925173911030603999
 BoxCollider:
@@ -1359,7 +1371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &7570873523475300842
 GameObject:
@@ -1419,7 +1432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &7743171259881997446
 GameObject:
@@ -1451,7 +1465,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2727305149042569104}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8047750515019713739
 BoxCollider:
@@ -1479,67 +1493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
-  hitCount: 0
---- !u!1 &8432834264357949048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2790739919500334163}
-  - component: {fileID: 982768702669652631}
-  - component: {fileID: 2463621337722588101}
-  m_Layer: 7
-  m_Name: ColliderBackMidTop
-  m_TagString: BoatColliders
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2790739919500334163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8432834264357949048}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1582255, y: 28.37, z: -4.73}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2727305149042569104}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &982768702669652631
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8432834264357949048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.4117565, y: 3.8418329, z: 13.864082}
-  m_Center: {x: 3.7056713, y: -3.9257905, z: 22.372076}
---- !u!114 &2463621337722588101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8432834264357949048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e530cfa4619774289cc98bf0740558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0
 --- !u!1 &8524323443126946420
 GameObject:
@@ -1577,7 +1532,6 @@ Transform:
   - {fileID: 6937926774844069290}
   - {fileID: 1465500700542106922}
   - {fileID: 5012242316739733154}
-  - {fileID: 2790739919500334163}
   - {fileID: 938638384687575439}
   - {fileID: 4988148665116350773}
   - {fileID: 7270105865769538798}
@@ -1643,5 +1597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 3084393050789656243}
-  dmg: 20
+  cannonDmg: 20
+  environmentDmg: 10
   hitCount: 0

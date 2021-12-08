@@ -90,7 +90,7 @@ public class PauseController : MonoBehaviour
 
     public void MainMenu()
     {
-        StartCoroutine(LoadLevel(0));
+        SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator LoadLevel(int levelIndex)

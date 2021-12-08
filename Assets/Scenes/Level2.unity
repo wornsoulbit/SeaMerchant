@@ -70680,6 +70680,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1639716743}
+    - target: {fileID: 2481873428109594026, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24246004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481873428109594026, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.51122034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481873428109594026, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 3084668974458432413, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
       propertyPath: m_RootOrder
       value: 3

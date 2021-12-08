@@ -62996,12 +62996,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2549286246416156074, guid: 0319cfad002690148845aace91f5e263, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9677655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549286246416156074, guid: 0319cfad002690148845aace91f5e263, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9677655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549286246416156074, guid: 0319cfad002690148845aace91f5e263, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9677655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549286246416156074, guid: 0319cfad002690148845aace91f5e263, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.6
       objectReference: {fileID: 0}
     - target: {fileID: 2549286246416156074, guid: 0319cfad002690148845aace91f5e263, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 158.9
+      value: 157.09
       objectReference: {fileID: 0}
     - target: {fileID: 2549286246416156074, guid: 0319cfad002690148845aace91f5e263, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63039,6 +63051,10 @@ PrefabInstance:
       propertyPath: damg
       value: 
       objectReference: {fileID: 1142351258}
+    - target: {fileID: 2549286246416156076, guid: 0319cfad002690148845aace91f5e263, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2549286246416156077, guid: 0319cfad002690148845aace91f5e263, type: 3}
       propertyPath: m_Name
       value: Player
@@ -70741,6 +70757,10 @@ PrefabInstance:
       value: Boat
       objectReference: {fileID: 0}
     - target: {fileID: 6174269213085712285, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174269213085712285, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
       propertyPath: hammer
       value: 
       objectReference: {fileID: 683589355}
@@ -70748,6 +70768,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 747626191}
+    - target: {fileID: 6174269213085712285, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
+      propertyPath: steerSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6174269213085712285, guid: 95a3db148b9d36047b6c115041d7908a, type: 3}
       propertyPath: interactImage
       value: 

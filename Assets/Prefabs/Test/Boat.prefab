@@ -905,7 +905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173428037369888467, guid: 82b0e48fde947424f9e1c49a4ae3e4df, type: 3}
       propertyPath: speed
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6173428037369888467, guid: 82b0e48fde947424f9e1c49a4ae3e4df, type: 3}
       propertyPath: player
@@ -913,7 +913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173428037369888467, guid: 82b0e48fde947424f9e1c49a4ae3e4df, type: 3}
       propertyPath: steerSpeed
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6173428037369888467, guid: 82b0e48fde947424f9e1c49a4ae3e4df, type: 3}
       propertyPath: interactImage
@@ -921,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173428037369888467, guid: 82b0e48fde947424f9e1c49a4ae3e4df, type: 3}
       propertyPath: movementThreshold
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6505219491542373528, guid: 82b0e48fde947424f9e1c49a4ae3e4df, type: 3}
       propertyPath: m_RootOrder

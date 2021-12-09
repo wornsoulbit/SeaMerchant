@@ -23,11 +23,10 @@ public class TimerCountdown : MonoBehaviour
             StartCoroutine(TimerTake());
         }
 
-        // Prompting Game Over screen if there is no time left.
+        // Won the game.
         if (secondsLeft == 0)
         {
-            PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("DeathScreen");
+            SceneManager.LoadScene("WinGame");
         }
 
 

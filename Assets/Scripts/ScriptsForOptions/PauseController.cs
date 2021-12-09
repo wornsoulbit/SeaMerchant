@@ -51,7 +51,7 @@ public class PauseController : MonoBehaviour
 
         // If the player pressed escape key and is not on the boat the game will
         // either pause or unpause.
-        if (Input.GetKeyDown(KeyCode.Escape) && !isMounted)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (paused)
             {

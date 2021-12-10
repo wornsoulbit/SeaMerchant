@@ -42,7 +42,7 @@ public class PirateController : MonoBehaviour
         if(!OnBoat){
             float distance = Vector3.Distance(this.gameObject.transform.position, boatJumpTarget.transform.position);
             Debug.Log(distance);
-            if(distance <= 45){
+            if(distance <= 55){
                 // ParabolicMove(this.gameObject.transform, this.gameObject.transform.position, boatJumpTarget.transform.position, 15f);
                 Jumping = true;
             }
